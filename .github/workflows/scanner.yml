@@ -25,7 +25,7 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          printf 'TOKEN=%s\nCHAT_ID=%s\n' "$TELEGRAM_TOKEN" "$TELEGRAM_CHAT_ID" > telegram_config.txt
+          printf 'TOKEN="%s"\nCHAT_ID="%s"\n' "$TELEGRAM_TOKEN" "$TELEGRAM_CHAT_ID" > telegram_config.txt
 
       - name: Start scanner
         run: python delta_scanner.py
